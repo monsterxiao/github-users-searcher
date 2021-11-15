@@ -1,4 +1,4 @@
-# the-github-users-searcher
+# Github Users Searcher
 
 ## Built with
 

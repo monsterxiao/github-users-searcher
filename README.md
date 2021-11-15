@@ -22,5 +22,3 @@
 ## Deployment
 
 [See the final project here](https://)
-
-test Gitee and GitHub

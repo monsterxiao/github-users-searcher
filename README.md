@@ -1,6 +1,7 @@
 # Github Users Searcher
 
 To search and view the GitHub users using the [GitHub API](https://api.github.com)
+
 Note:
 For unauthenticated requests, the rate limit allows for up to 60 requests per hour.
 

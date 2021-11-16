@@ -12,9 +12,9 @@
 ## Gihthub API
 
 -   [Root Endpoint](https://api.github.com)
--   [Get User](https://api.github.com/users/evanyou)
--   [Repos](https://api.github.com/users/evanyou/repos?per_page=100)
--   [Followers](https://api.github.com/users/evanyou/followers)
+-   [Get User](https://api.github.com/users/yyx990803)
+-   [Repos](https://api.github.com/users/yyx990803/repos?per_page=100)
+-   [Followers](https://api.github.com/users/yyx990803/followers)
 -   [Rate Limit](https://api.github.com/rate_limit)
 
     For unauthenticated requests, the rate limit allows for up to 60 requests per hour.

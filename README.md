@@ -1,5 +1,9 @@
 # Github Users Searcher
 
+To search and view the GitHub users using the [GitHub API](https://api.github.com)
+Note:
+For unauthenticated requests, the rate limit allows for up to 60 requests per hour.
+
 ## Built with
 
 -   HTML / CSS / JavaScript
@@ -8,16 +12,6 @@
 -   Styled Components
 -   ECharts
 -   Auth0
-
-## Gihthub API
-
--   [Root Endpoint](https://api.github.com)
--   [Get User](https://api.github.com/users/yyx990803)
--   [Repos](https://api.github.com/users/yyx990803/repos?per_page=100)
--   [Followers](https://api.github.com/users/yyx990803/followers)
--   [Rate Limit](https://api.github.com/rate_limit)
-
-    For unauthenticated requests, the rate limit allows for up to 60 requests per hour.
 
 ## Deployment
 

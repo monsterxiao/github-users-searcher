@@ -26,7 +26,7 @@ const Info = () => {
         {
             id: 3,
             icon: <FiUserPlus className='icon' />,
-            lable: 'ta关注',
+            lable: 'ta 关注',
             value: following,
             color: 'purple',
         },

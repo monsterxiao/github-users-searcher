@@ -4,7 +4,7 @@ import { MdSearch } from 'react-icons/md'
 import { AppCtx } from '../context/context'
 
 const Search = () => {
-    const { req, error, searchUser } = React.useContext(AppCtx)
+    const { req, error, searchUser, isLoading } = React.useContext(AppCtx)
     const [user, setUser] = React.useState('')
 
     const handleSubmit = (e) => {
@@ -32,7 +32,9 @@ const Search = () => {
                             onChange={(e) => setUser(e.target.value)}
                             value={user}
                         />
-                        {req > 0 && <button className='btn'>搜索</button>}
+                        {req > 0 && !isLoading && (
+                            <button type='submit'>搜索</button>
+                        )}
                     </div>
                 </form>
                 <h3>您还能搜索: {req} 次</h3>
@@ -68,7 +70,8 @@ const Wrapper = styled.div`
             padding: 0.25rem 0.5rem;
         }
         input::placeholder {
-            color: var(--clr-grey-3);
+            color: var(--clr-grey-8);
+            font-weight: bold;
             text-transform: capitalize;
             letter-spacing: var(--spacing);
         }

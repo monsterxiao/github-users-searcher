@@ -3,18 +3,16 @@ import styled from 'styled-components'
 
 const Footer = () => {
     return (
-        <section className='section'>
-            <Wrapper>
-                <h4>
-                    2021 @
-                    <a href='https://github.com/monsterxiao'> monsterxiao</a>
-                </h4>
-            </Wrapper>
-        </section>
+        <Wrapper>
+            <h4>
+                2021 @<a href='https://github.com/monsterxiao'> monsterxiao</a>
+            </h4>
+        </Wrapper>
     )
 }
 
 const Wrapper = styled.footer`
+    width: 100% !important;
     padding: 1.5rem;
     margin-top: 4rem;
     background: var(--clr-primary-3);

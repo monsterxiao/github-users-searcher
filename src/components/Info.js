@@ -10,31 +10,31 @@ const Info = () => {
 
     const items = [
         {
-            id: 1,
+            id: 'info-1',
             icon: <GoRepo className='icon' />,
             lable: '仓库',
             value: public_repos,
             color: 'pink',
         },
         {
-            id: 2,
+            id: 'info-2',
             icon: <FiUsers className='icon' />,
             lable: '关注者',
             value: followers,
             color: 'green',
         },
         {
-            id: 3,
+            id: 'info-3',
             icon: <FiUserPlus className='icon' />,
             lable: 'ta 关注',
             value: following,
             color: 'purple',
         },
         {
-            id: 4,
+            id: 'info-4',
             icon: <GoGist className='icon' />,
             lable: 'gists',
-            value: public_gists,
+            value: public_gists, 
             color: 'yellow',
         },
     ]
@@ -44,7 +44,7 @@ const Info = () => {
                 {items.map((item) => {
                     const { id, icon, lable, value, color } = item
                     return (
-                        <article className='item' Key={id}>
+                        <article className='item' key={id}>
                             <span className={color}>{icon}</span>
                             <div>
                                 <h3>{value}</h3>

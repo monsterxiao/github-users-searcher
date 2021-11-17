@@ -4,16 +4,16 @@ import tempRepos from './tempData.js/tempRepos'
 import tempFollowers from './tempData.js/tempFollowers'
 import axios from 'axios'
 
-const rootUrl = 'https://api.github.com'
-const rateLimitUrl = 'https://api.github.com/rate_limit'
-
-// api 说明:
-// 替换 url 中的 userName 为要搜索的用户名
+// GitHub API 说明:
+// 以下 url 中的 userName 替换成要搜索的用户名
 // Get User: 'https://api.github.com/users/userName'
 // Repos: 'https://api.github.com/users/userName/repos?per_page=100'
 // Followers: 'https://api.github.com/users/userName/followers?per_page=100'
 
-// context API
+const rootUrl = 'https://api.github.com'
+const rateLimitUrl = 'https://api.github.com/rate_limit'
+
+// create context API
 const AppCtx = React.createContext()
 
 // context provider wrapper
@@ -66,19 +66,19 @@ const CtxProvider = ({ children }) => {
             toggleError(true, '抱歉，您输入的用户名不存在')
         }
         // update request limit and set loading
-        checkLimit()
+        checkRemaining()
         setIsLoading(false)
     }
 
-    // check request limit from api
-    const checkLimit = () => {
+    // check request remaining from api
+    const checkRemaining = () => {
         axios(rateLimitUrl)
             .then(({ data }) => {
                 let {
-                    rate: { limit },
+                    rate: { remaining },
                 } = data
-                setReq(limit)
-                if (limit === 0) {
+                setReq(remaining)
+                if (remaining === 0) {
                     // throw an error msg
                     toggleError(
                         true,
@@ -94,7 +94,7 @@ const CtxProvider = ({ children }) => {
         setError({ show, msg })
     }
 
-    useEffect(() => checkLimit(), [])
+    useEffect(() => checkRemaining(), [])
 
     return (
         <AppCtx.Provider

@@ -5,9 +5,10 @@ const Radar = () => {
     const chartRef = useRef()
 
     const options = {
+        color: ['#37A2FF'],
         title: {
-            text: 'Referer of a Website',
-            subtext: 'Fake Data',
+            text: '编程语言分布',
+            subtext: 'Programming Languages',
             left: 'center',
         },
         tooltip: {
@@ -31,7 +32,7 @@ const Radar = () => {
         },
         series: [
             {
-                name: 'Budget vs spending',
+                name: '雷达图',
                 type: 'radar',
                 symbol: 'rect',
                 symbolSize: 8,
@@ -40,7 +41,7 @@ const Radar = () => {
                     color: 'hsl(185, 62%, 45%)',
                 },
                 areaStyle: {
-                    color: 'hsl(185, 94%, 87%)',
+                    color: 'hsl(184, 80%, 74%)',
                 },
 
                 emphasis: {

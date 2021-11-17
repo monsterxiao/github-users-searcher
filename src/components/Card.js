@@ -24,7 +24,7 @@ const Card = () => {
                     <h4>{name}</h4>
                     <p>@ {twitter_username || 'ta 没有 Twitter 账号'}</p>
                 </div>
-                <a herf={html_url}>关注 ta</a>
+                <a herf={html_url}>了解更多</a>
             </header>
             <p className='bio'>{bio}</p>
             <div className='links'>

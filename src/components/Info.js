@@ -19,7 +19,7 @@ const Info = () => {
         {
             id: 'info-2',
             icon: <FiUsers className='icon' />,
-            lable: '关注者',
+            lable: '关注 Ta',
             value: followers,
             color: 'green',
         },

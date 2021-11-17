@@ -6,8 +6,8 @@ const Doughnut = () => {
 
     const options = {
         title: {
-            text: 'Referer of a Website',
-            subtext: 'Fake Data',
+            text: '仓库收藏量(按语言)',
+            subtext: 'Stars Per Language',
             left: 'center',
         },
         tooltip: {

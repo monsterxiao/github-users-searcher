@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { AppCtx } from '../context/context'
-import { Radar, Column, Bar, Doughnut } from './Charts'
+import { Radar, Line, Bar, Doughnut } from './Charts'
 
 const Repos = () => {
     const { repos } = React.useContext(AppCtx)
@@ -12,7 +12,7 @@ const Repos = () => {
         <section className='section'>
             <Wrapper className='section-center'>
                 <Radar />
-                <Column />
+                <Line />
                 <Doughnut />
                 <Bar />
             </Wrapper>

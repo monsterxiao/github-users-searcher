@@ -13,6 +13,7 @@ For unauthenticated requests, the rate limit allows for up to 60 requests per ho
 -   Styled Components
 -   ECharts
 -   Auth0
+-   Axios
 
 ## Deployment
 

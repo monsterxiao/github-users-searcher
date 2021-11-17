@@ -1,6 +1,6 @@
 import Column from "./Column";
 import Bar from "./Bar";
-import Pie from "./Pie";
+import Radar from "./Radar";
 import Doughnut from "./Doughnut";
 
-export { Pie, Column, Bar, Doughnut };
+export { Radar, Column, Bar, Doughnut };

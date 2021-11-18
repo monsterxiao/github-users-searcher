@@ -6,7 +6,7 @@ const Doughnut = () => {
 
     const options = {
         title: {
-            text: '仓库收藏量(按语言)',
+            text: '收藏量(按语言)',
             subtext: 'Stars Per Language',
             left: 'center',
         },

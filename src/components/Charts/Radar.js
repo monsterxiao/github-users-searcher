@@ -8,7 +8,7 @@ const Radar = () => {
         color: ['#37A2FF'],
         title: {
             text: '编程语言分布',
-            subtext: 'Programming Languages',
+            subtext: `Programming Languages`,
             left: 'center',
         },
         tooltip: {
@@ -18,12 +18,18 @@ const Radar = () => {
         radar: {
             shape: 'circle',
             indicator: [
-                { name: 'Sales', max: 6500 },
-                { name: 'Administration', max: 16000 },
-                { name: 'Information Technology', max: 30000 },
-                { name: 'Customer Support', max: 38000 },
-                { name: 'Development', max: 52000 },
-                { name: 'Marketing', max: 25000 },
+                // { name: 'Sales', max: 6500 },
+                // { name: 'Administration', max: 16000 },
+                // { name: 'Information Technology', max: 30000 },
+                // { name: 'Customer Support', max: 38000 },
+                // { name: 'Development', max: 52000 },
+                // { name: 'Marketing', max: 25000 },
+                { name: 'Sales'},
+                { name: 'Administration'},
+                { name: 'Information Technology' },
+                { name: 'Customer Support'},
+                { name: 'Development' },
+                { name: 'Marketing' },
             ],
             radius: 100,
             axisName: {
@@ -52,8 +58,8 @@ const Radar = () => {
 
                 data: [
                     {
-                        value: [4200, 3000, 20000, 35000, 50000, 18000],
-                        name: 'Allocated Budget',
+                        value: [200, 3000, 20000, 35000, 50000, 18000],
+                        name: '编程语言分布',
                     },
                 ],
             },

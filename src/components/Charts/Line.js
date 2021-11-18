@@ -2,14 +2,14 @@ import React, { useRef } from 'react'
 import useEcharts from './useEcharts'
 import * as echarts from 'echarts/core'
 
-const Line = () => {
+const Line = ({ data }) => {
     const chartRef = useRef()
 
     const options = {
         color: ['#FF0087', '#FFBF00'],
         title: {
-            text: '仓库关注度排行榜',
-            subtext: 'Most Popular and Forked Repos',
+            text: '最受关注仓库',
+            subtext: 'Most watched',
             left: 'center',
         },
         tooltip: {
@@ -22,33 +22,48 @@ const Line = () => {
             },
         },
         legend: {
-            data: ['最受欢迎', 'Forked'],
+            data: ['Stars', 'Forked'],
             orient: 'vertical',
             right: '8%',
         },
         grid: {
             left: '5%',
-            right: '10%',
+            right: '15%',
             bottom: '20%',
             containLabel: true,
         },
+        dataset: [
+            {
+                // 序号为 0 的 dataset。
+                source: data,
+            },
+            {
+                // 序号为 1 的 dataset。
+                source: data,
+            },
+        ],
         xAxis: [
             {
                 name: '仓库名称（Repos）',
                 nameLocation: 'center',
                 nameTextStyle: {
                     fontWeight: 'bold',
-                    padding: [15, 0, 0, 0],
+                    padding: [30, 0, 0, 0],
                     color: '#222',
+                },
+                axisLabel: {
+                    fontSize: 10,
+                    width: 55,
+                    interval: 0,
+                    overflow: 'break',
                 },
                 type: 'category',
                 boundaryGap: false,
-                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
             },
         ],
         yAxis: [
             {
-                name: '收藏量（Stars）',
+                name: '关注度（value）',
                 nameLocation: 'end',
                 nameTextStyle: {
                     fontWeight: 'bold',
@@ -59,7 +74,7 @@ const Line = () => {
         ],
         series: [
             {
-                name: '最受欢迎',
+                name: 'Stars',
                 type: 'line',
                 stack: 'Total',
                 smooth: true,
@@ -83,7 +98,13 @@ const Line = () => {
                 emphasis: {
                     focus: 'series',
                 },
-                data: [140, 232, 101, 264, 90, 340, 250],
+                datasetIndex: 0,
+                encode: {
+                    // 将 "label" 列映射到 X 轴。
+                    x: 'label',
+                    // 将 "stars" 列映射到 Y 轴。
+                    y: 'stars',
+                },
             },
             {
                 name: 'Forked',
@@ -110,7 +131,13 @@ const Line = () => {
                 emphasis: {
                     focus: 'series',
                 },
-                data: [120, 282, 111, 234, 220, 340, 310],
+                datasetIndex: 1,
+                encode: {
+                    // 将 "label" 列映射到 X 轴。
+                    x: 'label',
+                    // 将 "stars" 列映射到 Y 轴。
+                    y: 'forks',
+                },
             },
         ],
     }

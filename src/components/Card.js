@@ -24,7 +24,7 @@ const Card = () => {
                     <h4>{name}</h4>
                     <p>@ {twitter_username || 'ta 没有 Twitter 账号'}</p>
                 </div>
-                <a herf={html_url}>了解更多</a>
+                <a href={html_url}>了解更多</a>
             </header>
             <p className='bio'>{bio}</p>
             <div className='links'>
@@ -34,7 +34,7 @@ const Card = () => {
                 <p>
                     <MdLocationOn /> {location || 'Earth'}
                 </p>
-                <a herf={`https://${blog}`}>
+                <a href={`https://${blog}`}>
                     <MdLink /> {blog || 'No information'}
                 </a>
             </div>

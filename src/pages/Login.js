@@ -10,7 +10,7 @@ const Login = () => {
             <div className='container'>
                 <img src={loginImg} alt='login' />
                 <h1>GitHub 用户搜索器</h1>
-                <button className='btn'>马上登陆 / 注册账号</button>
+                <button className='btn'>登陆 / 注册</button>
             </div>
         </Wrapper>
     )

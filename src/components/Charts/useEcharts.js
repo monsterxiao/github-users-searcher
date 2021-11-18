@@ -26,6 +26,7 @@ const useEcharts = (chartRef, options) => {
             myChart && myChart.dispose()
         }
     }, [])
+
     return
 }
 

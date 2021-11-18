@@ -1,7 +1,7 @@
 import React from 'react'
 import { AppCtx } from '../context/context'
 import styled from 'styled-components'
-import { GoRepo, GoGist, GoScreenFull } from 'react-icons/go'
+import { GoRepo, GoGist } from 'react-icons/go'
 import { FiUsers, FiUserPlus } from 'react-icons/fi'
 
 const Info = () => {

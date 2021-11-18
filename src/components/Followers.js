@@ -4,7 +4,13 @@ import styled from 'styled-components'
 
 const Followers = () => {
     const { followers } = React.useContext(AppCtx)
-
+    if (followers.length === 0) {
+        return (
+            <Wrapper>
+                <div className='followers'>Ta 的关注列表为空</div>
+            </Wrapper>
+        )
+    }
     return (
         <Wrapper>
             <div className='followers'>

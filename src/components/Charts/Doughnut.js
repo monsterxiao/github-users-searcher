@@ -1,12 +1,12 @@
 import React, { useRef } from 'react'
 import useEcharts from './useEcharts'
 
-const Doughnut = () => {
+const Doughnut = ({ data }) => {
     const chartRef = useRef()
 
     const options = {
         title: {
-            text: '收藏量(按语言)',
+            text: '编程语言 Star 数（Top 10）',
             subtext: 'Stars Per Language',
             left: 'center',
         },
@@ -15,27 +15,29 @@ const Doughnut = () => {
         },
         legend: {
             orient: 'vertical',
+            top:'15%',
             left: 'left',
         },
+        dataset: [
+            {
+                source: data,
+            },
+        ],
         series: [
             {
-                name: 'Access From',
+                name: '收藏量（Star）',
                 type: 'pie',
                 radius: ['20%', '40%'],
-                width: 'auto',
-                height: 'auto',
+                center:['60%','50%'],
                 itemStyle: {
-                    borderRadius: 10,
+                    borderRadius: 5,
                     borderColor: '#fff',
                     borderWidth: 2,
                 },
-                data: [
-                    { value: 1048, name: 'Search Engine' },
-                    { value: 735, name: 'Direct' },
-                    { value: 580, name: 'Email' },
-                    { value: 484, name: 'Union Ads' },
-                    { value: 300, name: 'Video Ads' },
-                ],
+                encode: {
+                    itemName: 'label',
+                    value: 'value',
+                },
                 emphasis: {
                     itemStyle: {
                         shadowBlur: 10,

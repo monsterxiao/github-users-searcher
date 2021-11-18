@@ -26,7 +26,6 @@ const Repos = () => {
         }
         return total
     }, {})
-    // console.log('languages', languages)
 
     // 把仓库数据(含 starts 和 forks )提取并汇总
     let allRepos = repos.reduce((total, item) => {
@@ -38,7 +37,6 @@ const Repos = () => {
         }
         return total
     }, {})
-    // console.log('all repos', allRepos)
 
     // top #10 language
     const mostUsed = Object.values(languages)
@@ -46,18 +44,13 @@ const Repos = () => {
             return b.value - a.value
         })
         .slice(0, 10)
-    // console.log('mostUsed', mostUsed)
 
     // top #10 stars per language
     const mostStar = Object.values(languages)
         .sort((a, b) => {
             return b.stars - a.stars
         })
-        .map((item) => {
-            return { ...item, value: item.stars }
-        })
         .slice(0, 10)
-    // console.log('mostStar', mostStar)
 
     // top #5 stars repos
     const starsRepos = Object.values(allRepos)
@@ -65,17 +58,16 @@ const Repos = () => {
             return b.stars - a.stars
         })
         .slice(0, 5)
-    // console.log('starsRepos', starsRepos)
 
+    // top #5 popular repos
     const popularRepos = [...starsRepos].reverse()
-    console.log(popularRepos)
 
     return (
         <section className='section'>
             <Wrapper className='section-center'>
-                <Radar />
+                <Radar data={mostStar} />
                 <Line data={starsRepos} />
-                <Doughnut />
+                <Doughnut data={mostUsed} />
                 <Bar data={popularRepos} />
             </Wrapper>
         </section>

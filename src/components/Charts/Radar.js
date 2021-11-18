@@ -1,14 +1,24 @@
 import React, { useRef } from 'react'
 import useEcharts from './useEcharts'
 
-const Radar = () => {
+const Radar = ({ data }) => {
     const chartRef = useRef()
+    let indicators = []
+    let radarValue = []
+    data.forEach((item) => {
+        const { label, value } = item
+        let maxValue = value + 1
+        indicators.push({ name: label, max: maxValue })
+        radarValue.push(value)
+    })
+    console.log(indicators)
+    console.log(radarValue)
 
     const options = {
         color: ['#37A2FF'],
         title: {
-            text: '编程语言分布',
-            subtext: `Programming Languages`,
+            text: '编程语言分布（Top 10）',
+            subtext: `Most Used Languages`,
             left: 'center',
         },
         tooltip: {
@@ -17,20 +27,7 @@ const Radar = () => {
 
         radar: {
             shape: 'circle',
-            indicator: [
-                // { name: 'Sales', max: 6500 },
-                // { name: 'Administration', max: 16000 },
-                // { name: 'Information Technology', max: 30000 },
-                // { name: 'Customer Support', max: 38000 },
-                // { name: 'Development', max: 52000 },
-                // { name: 'Marketing', max: 25000 },
-                { name: 'Sales'},
-                { name: 'Administration'},
-                { name: 'Information Technology' },
-                { name: 'Customer Support'},
-                { name: 'Development' },
-                { name: 'Marketing' },
-            ],
+            indicator: indicators,
             radius: 100,
             axisName: {
                 color: '#222',
@@ -58,8 +55,8 @@ const Radar = () => {
 
                 data: [
                     {
-                        value: [200, 3000, 20000, 35000, 50000, 18000],
-                        name: '编程语言分布',
+                        value: radarValue,
+                        name: '编程语言偏好',
                     },
                 ],
             },

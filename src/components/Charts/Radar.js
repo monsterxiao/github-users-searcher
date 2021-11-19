@@ -3,16 +3,20 @@ import useEcharts from './useEcharts'
 
 const Radar = ({ data }) => {
     const chartRef = useRef()
-    let indicators = []
-    let radarValue = []
-    data.forEach((item) => {
-        const { label, value } = item
-        let maxValue = value + 1
-        indicators.push({ name: label, max: maxValue })
-        radarValue.push(value)
-    })
-    console.log(indicators)
-    console.log(radarValue)
+    const indicators = []
+    const radarValue = []
+    // 假如数据为空，要给indicators预设值，否则 Echarts 报错
+    if (data.length === 0) {
+        indicators.push({ name: '无数据' })
+    } else {
+        // 数据非空，则把数据处理成 radar 图的数据格式
+        data.forEach((item) => {
+            const { label, value } = item
+            let maxValue = value + 1
+            indicators.push({ name: label, max: maxValue })
+            radarValue.push(value)
+        })
+    }
 
     const options = {
         color: ['#37A2FF'],

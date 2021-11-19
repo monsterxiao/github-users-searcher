@@ -15,7 +15,7 @@ const Doughnut = ({ data }) => {
         },
         legend: {
             orient: 'vertical',
-            top:'15%',
+            top: '15%',
             left: 'left',
         },
         dataset: [
@@ -28,7 +28,7 @@ const Doughnut = ({ data }) => {
                 name: '收藏量（Star）',
                 type: 'pie',
                 radius: ['20%', '40%'],
-                center:['60%','50%'],
+                center: ['60%', '50%'],
                 itemStyle: {
                     borderRadius: 5,
                     borderColor: '#fff',

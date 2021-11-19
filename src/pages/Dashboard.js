@@ -1,6 +1,6 @@
 import React from 'react'
 import { Info, Repos, User, Search, Navbar,Footer } from '../components'
-import loadingImage from '../images/preloader.gif'
+import loadingImage from '../images/loading-img.gif'
 import { AppCtx } from '../context/context'
 
 const Dashboard = () => {

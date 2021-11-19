@@ -9,8 +9,8 @@ const Login = () => {
         <Wrapper>
             <div className='container'>
                 <img src={loginImg} alt='login' />
-                <h1>GitHub 用户搜索器</h1>
-                <button className='btn'>登陆 / 注册</button>
+                <h2>GitHub 用户搜索器</h2>
+                <button className='btn'>登录 / 注册</button>
             </div>
         </Wrapper>
     )
@@ -22,14 +22,11 @@ const Wrapper = styled.section`
     place-items: center;
     .container {
         width: 90vw;
-        max-width: 600px;
+        max-width: 800px;
         text-align: center;
     }
-    img {
+    h2 {
         margin-bottom: 2rem;
-    }
-    h1 {
-        margin-bottom: 1.5rem;
     }
 `
 export default Login

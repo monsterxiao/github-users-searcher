@@ -21,7 +21,7 @@ const Radar = ({ data }) => {
     const options = {
         color: ['#37A2FF'],
         title: {
-            text: '编程语言分布（Top 10）',
+            text: '编程语言偏好',
             subtext: `Most Used Languages`,
             left: 'center',
         },

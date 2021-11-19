@@ -9,10 +9,10 @@ const Footer = () => {
                 - 数据来源：{' '}
                 <a href='https://api.github.com'>GitHub Api</a>
                 <br />
-                <h5>
+                <div>
                     Built with React / React Router / React Icons/ Styled
                     Components / ECharts / Auth0 / Axios and more
-                </h5>
+                </div>
             </h4>
         </Wrapper>
     )
@@ -37,8 +37,9 @@ const Wrapper = styled.footer`
             }
         }
     }
-    h5 {
+    div {
         margin-top: 1rem;
+        font-size: 0.875rem;
         font-weight: 400;
         color: var(--clr-primary-1);
     }

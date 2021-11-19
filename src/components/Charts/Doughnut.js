@@ -6,7 +6,7 @@ const Doughnut = ({ data }) => {
 
     const options = {
         title: {
-            text: '编程语言 Star 数（Top 10）',
+            text: '编程语言 Star 数',
             subtext: 'Stars Per Language',
             left: 'center',
         },

@@ -5,7 +5,14 @@ const Footer = () => {
     return (
         <Wrapper>
             <h4>
-                2021 @<a href='https://github.com/monsterxiao'> monsterxiao</a>
+                2021 @ <a href='https://github.com/monsterxiao'> monsterxiao</a>{' '}
+                - 数据来源：{' '}
+                <a href='https://api.github.com'>GitHub Api</a>
+                <br />
+                <h5>
+                    Built with React / React Router / React Icons/ Styled
+                    Components / ECharts / Auth0 / Axios and more
+                </h5>
             </h4>
         </Wrapper>
     )
@@ -19,7 +26,6 @@ const Wrapper = styled.footer`
     text-align: center;
 
     h4 {
-        margin-bottom: 0;
         font-weight: 400;
         color: var(--clr-primary-10);
         a {
@@ -30,6 +36,11 @@ const Wrapper = styled.footer`
                 color: var(--clr-primary-10);
             }
         }
+    }
+    h5 {
+        margin-top: 1rem;
+        font-weight: 400;
+        color: var(--clr-primary-1);
     }
 `
 

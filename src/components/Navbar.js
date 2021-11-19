@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useAuth0 } from '@auth0/auth0-react'
 
 const Navbar = () => {
+    // 拿到 Auth0 用户登录相关数据
     const { isAuthenticated, loginWithRedirect, logout, user, isLoading } =
         useAuth0()
 
@@ -10,9 +11,7 @@ const Navbar = () => {
 
     return (
         <Wrapper>
-            {isUser && user.picture && (
-                <img src={user.picture} alt={user.name} />
-            )}
+            {isUser && user.picture && <img src={user.picture} alt='avatar' />}
             {isUser && user.name && (
                 <h4>
                     欢迎回来, <strong>{user.name.toUpperCase()}</strong>

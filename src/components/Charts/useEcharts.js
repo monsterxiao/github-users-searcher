@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import * as echarts from 'echarts'
 
 const useEcharts = (chartRef, options) => {
@@ -19,7 +19,7 @@ const useEcharts = (chartRef, options) => {
         myChart.setOption(options)
     }
 
-    useEffect(() => {
+    React.useEffect(() => {
         renderChart()
         return () => {
             // clean up

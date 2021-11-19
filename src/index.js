@@ -12,6 +12,7 @@ ReactDOM.render(
             domain='dev-5sqdm5z8.us.auth0.com'
             clientId='eLPHdOfILVuhvtRcpTNb7RFsCYCbdQGs'
             redirectUri={window.location.origin}
+            cacheLocation='localstorage'
         >
             <CtxProvider>
                 <App />

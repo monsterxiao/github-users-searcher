@@ -53,7 +53,6 @@ const CtxProvider = ({ children }) => {
             // 目的是等所有数据拿到后，再去更新页面
             await Promise.allSettled([axios(reposUrl), axios(followersUrl)])
                 .then((responses) => {
-                    console.log('repos resp in context',response)
                     const [repos, followers] = responses
                     if (repos.status === 'fulfilled') {
                         setRepos(repos.value.data)

@@ -34,7 +34,7 @@ const Info = () => {
             id: 'info-4',
             icon: <GoGist className='icon' />,
             lable: 'gists',
-            value: public_gists, 
+            value: public_gists,
             color: 'yellow',
         },
     ]

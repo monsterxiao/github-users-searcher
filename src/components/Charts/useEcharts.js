@@ -17,6 +17,11 @@ const useEcharts = (chartRef, options) => {
         }
         // set option
         myChart.setOption(options)
+        // set progressive
+        window.addEventListener('resize', () => {
+            console.log('resize')
+            myChart.resize()
+        })
     }
 
     React.useEffect(() => {

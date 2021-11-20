@@ -1,5 +1,5 @@
 import React from 'react'
-import { Info, Repos, User, Search, Navbar,Footer } from '../components'
+import { Info, Repos, User, Search, Navbar, Footer } from '../components'
 import loadingImage from '../images/loading-img.gif'
 import { AppCtx } from '../context/context'
 
@@ -12,7 +12,7 @@ const Dashboard = () => {
                 <Navbar />
                 <Search />
                 <img src={loadingImage} className='loading-img' alt='loading' />
-            <Footer/>
+                <Footer />
             </main>
         )
     }
@@ -24,7 +24,7 @@ const Dashboard = () => {
             <Info />
             <User />
             <Repos />
-            <Footer/>
+            <Footer />
         </main>
     )
 }

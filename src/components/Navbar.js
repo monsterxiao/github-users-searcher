@@ -1,17 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useAuth0 } from '@auth0/auth0-react'
+import avatar from '../images/avatar.svg'
 
 const Navbar = () => {
     // 拿到 Auth0 用户登录相关数据
-    const { isAuthenticated, loginWithRedirect, logout, user, isLoading } =
-        useAuth0()
-
+    const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0()
+    // 判断是否登录成功
     const isUser = isAuthenticated && user
 
     return (
         <Wrapper>
-            {isUser && user.picture && <img src={user.picture} alt='avatar' />}
+            {isUser && <img src={avatar} alt='avatar' />}
             {isUser && user.name && (
                 <h4>
                     欢迎回来, <strong>{user.name.toUpperCase()}</strong>
@@ -60,6 +60,9 @@ const Wrapper = styled.nav`
         letter-spacing: var(--spacing);
         color: var(--clr-grey-5);
         cursor: pointer;
+    }
+    button:hover {
+        color: var(--clr-primary-5);
     }
 `
 

@@ -6,6 +6,7 @@ import { useAuth0 } from '@auth0/auth0-react'
 const PrivateRoute = ({ children, ...restProps }) => {
     // 拿到 Auth0 用户登录的相关数据
     const { isAuthenticated, user } = useAuth0()
+    // 判断是否登录成功
     const isLogin = isAuthenticated && user
 
     // 使用 Route 组件的 render 方法
@@ -15,11 +16,7 @@ const PrivateRoute = ({ children, ...restProps }) => {
         <Route
             {...restProps}
             render={() => {
-                return isLogin ? (
-                    children
-                ) : (
-                    <Redirect to='/login'></Redirect>
-                )
+                return isLogin ? children : <Redirect to='/login'></Redirect>
             }}
         />
     )

@@ -6,8 +6,7 @@ const Footer = () => {
         <Wrapper>
             <h4>
                 2021 @ <a href='https://github.com/monsterxiao'> monsterxiao</a>{' '}
-                - 数据来源：{' '}
-                <a href='https://api.github.com'>GitHub Api</a>
+                - 数据来源： <a href='https://api.github.com'>GitHub Api</a>
                 <br />
                 <div>
                     Built with React / React Router / React Icons/ Styled

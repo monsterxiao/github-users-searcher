@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
 
-// 定制一个 PrivateRoute
+// 定制一个 PrivateRoute （实现路由拦截）
 const PrivateRoute = ({ children, ...restProps }) => {
     // 拿到 Auth0 用户登录的相关数据
     const { isAuthenticated, user } = useAuth0()

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Dashboard, Login, PrivateRoute, AuthWrapper, Error } from './pages'
+import { Dashboard, Login, GuardRoute, AuthWrapper, Error } from './pages'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
@@ -7,9 +7,9 @@ function App() {
         <AuthWrapper>
             <Router>
                 <Switch>
-                    <PrivateRoute exact path='/'>
+                    <GuardRoute exact path='/'>
                         <Dashboard />
-                    </PrivateRoute>
+                    </GuardRoute>
                     <Route exact path='/login' component={Login} />
                     <Route path='*' component={Error} />
                 </Switch>
